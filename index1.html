@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
-    <title>test</title>
-    <script src="./index1.js">
-
-    </script>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storednamee</title>
 </head>
 <body>
-   <img src="photo2.jpg"> 
-   <img src="photo1.jpg">
-   <button>heelo</button>
+    <button>Change user</button>
+    <h1>
+
+    </h1>
+ <script>
+    let myButton = document.querySelector("button");
+let myHeading = document.querySelector("h1");
+function setUserName() {
+  const myName = prompt("Please enter your name.");
+  localStorage.setItem("name", myName);
+  myHeading.textContent = `Mozilla is cool, ${myName}`;
+}
+if (!localStorage.getItem("name")) {
+  setUserName();
+} else {
+  const storedName = localStorage.getItem("name");
+  myHeading.textContent = `Mozilla is cool, ${storedName}`;
+}
+myButton.onclick = () => {
+  setUserName();
+};
+
+
+ </script>
 </body>
 </html>
