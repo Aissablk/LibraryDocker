@@ -13,7 +13,21 @@
    <button onclick="addBoooktoLibrary();">
     Add new book
    </button>
-  
+
+   <div>
+    <div class="Titlee">
+      Title
+    </div>
+    <div class="authorr">
+     
+    </div>
+    <div class="pagess">
+    
+    </div> 
+    <div class="readd">
+     
+    </div>
+   </div>
 
     <script>
     
@@ -42,39 +56,24 @@
       const objectBook=new book(title,author,pages,read)
       Library.push(objectBook);
       
+      display();
+    
     }
+    function display (){
+      
+
+    document.querySelector('.Titlee').innerHTML = `Title is: ${objectBook.title}`;
+    document.querySelector('.authorr').innerHTML = `The author is ${author}`;
+    document.querySelector('.pagess').innerHTML = `Number of pages is: ${pages}`;
+    document.querySelector('.readd').innerHTML = `Read: ${read}`
+  }
+  Library.forEach(display);
 
    
-    /*
-    addBoooktoLibrary ();
-   console.log(Library); 
+    
+
    
-   function book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = function () {
-    console.log(`The ${title}, ${author}, number of pages: ${pages}, not ${read}`);
-  };
-}
-
-const Library = [];
-
-function addBook() {
-  const title = prompt("Enter the title of the book:");
-  const author = prompt("Enter the author of the book:");
-  const pages = parseInt(prompt("Enter the number of pages in the book:"));
-  const read = prompt("Have you read the book? (yes/no):");
-
-  const newBook = new book(title, author, pages, read);
-  Library.push(newBook);
-}
-
-// Example usage:
-addBook(); // Prompts the user for book details and adds it to the Library array
-
-   */
+  
 
     </script>
 
