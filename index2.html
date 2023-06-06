@@ -10,32 +10,75 @@
  </head>
 
 <body>
-   <canvas class="canva">
-    heello
-   </canvas>
-    <button class="update">
-        Update
-    </button>
+   <button onclick="addBoooktoLibrary();">
+    Add new book
+   </button>
+  
 
     <script>
-     var upDate=document.querySelector('button');
-     upDate.onclick=()=>{   let circles=  document.querySelector("canvas");
-     circles=Math.random(22);
+    
+    function book (title,author,pages,read){
+
+      this.title=title;
+      this.author=author;
+      this.pages=pages;
+      this.read=read;
+      this.info=function infos(){
+        console.log(`the ${title} , ${author},number of ages${pages},not ${read}`)
+      }
+     
+
+    }
+    
+    
+
+
+    let Library=[];
+    function addBoooktoLibrary(){
+      const title=prompt("what's the title of your book")
+      const author=prompt("what author of this book")
+      const pages=prompt("what number of pages")
+      const read=prompt("did your read this book Yes/No")
+      const objectBook=new book(title,author,pages,read)
+      Library.push(objectBook);
       
-     }
-     
-     
+    }
+
+   
+    /*
+    addBoooktoLibrary ();
+   console.log(Library); 
+   
+   function book(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+  this.info = function () {
+    console.log(`The ${title}, ${author}, number of pages: ${pages}, not ${read}`);
+  };
+}
+
+const Library = [];
+
+function addBook() {
+  const title = prompt("Enter the title of the book:");
+  const author = prompt("Enter the author of the book:");
+  const pages = parseInt(prompt("Enter the number of pages in the book:"));
+  const read = prompt("Have you read the book? (yes/no):");
+
+  const newBook = new book(title, author, pages, read);
+  Library.push(newBook);
+}
+
+// Example usage:
+addBook(); // Prompts the user for book details and adds it to the Library array
+
+   */
+
     </script>
-    <style>
-      .canva{
-        background-color: aqua;
-        height: 100px;
-        position: absolute;
-        
-      }
-      .update{
-        position: absolute;
-      }
+
+    
     </style>
 </body>
 
