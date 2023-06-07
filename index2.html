@@ -55,20 +55,20 @@
       const read=prompt("did your read this book Yes/No")
       const objectBook=new book(title,author,pages,read)
       Library.push(objectBook);
+      function display (){
       
-      display();
+   
+      document.querySelector('.Titlee').innerHTML = `Title is: ${title}`;
+      document.querySelector('.authorr').innerHTML = `The author is ${author}`;
+      document.querySelector('.pagess').innerHTML = `Number of pages is: ${pages}`
+      document.querySelector('.readd').innerHTML = `Read: ${read}`}
     
+      Library.forEach(display);
+  
+    
+     
     }
-    function display (){
-      
-
-    document.querySelector('.Titlee').innerHTML = `Title is: ${objectBook.title}`;
-    document.querySelector('.authorr').innerHTML = `The author is ${author}`;
-    document.querySelector('.pagess').innerHTML = `Number of pages is: ${pages}`;
-    document.querySelector('.readd').innerHTML = `Read: ${read}`
-  }
-  Library.forEach(display);
-
+    
    
     
 
