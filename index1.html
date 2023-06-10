@@ -7,14 +7,30 @@
   <title>Document</title>
 </head>
 <body>
-  <button>
-heelo 
-  </button>
-  <button>
-    heelo 
-      </button>
-      <button>
-        heelo 
-          </button>
+<script>
+  // Créer un nouvel élément <div>
+
+
+const Title1=document.createElement('div');
+const author1=document.createElement('div');
+const pages1=document.createElement('div');
+const read1=document.createElement('div');
+
+// Ajouter du contenu à l'élément
+
+read1.innerHTML=`${title} `
+author1.innerText=`${author}`
+pages1.innerText=`${pages}`
+Title1.innerText=`${Title1}`
+
+
+// Ajouter l'élément créé au document
+
+document.body.appendChild(read1);
+document.body.appendChild(Title1);
+document.body.appendChild(pages1);
+document.body.appendChild(author1);
+</script>
+          
 </body>
 </html>
