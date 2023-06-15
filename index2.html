@@ -5,14 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    looping code
+    Librarycode
   </title>
  </head>
 
 <body>
-   <button onclick="addBoooktoLibrary();">
+   <button id="addnewbook" onclick="addBoooktoLibrary();">
     Add new book
    </button>
+   <dialog id="dialoguee">
+    <form id="myForm">
+      <label for="titlee">
+        Title
+      </label>
+      <input type="string" id="titleinput" required><br>
+      <label for="author">
+         Name of author
+      </label>
+      <input type="string" id="authorinput" required><br>
+      <label for="number">
+        number of pages
+      </label>
+      <input type="string" id="numberofpagesinput" required><br>
+   
+   
+      <label for="string">
+        read
+      </label>
+      <input type="string" id="readinput" required><br>
+      <button type="submit"  id="add-button"  >
+        Add
+      </button>
+    </form>
+   </dialog>
+
    <div id="divLib">
 
    </div>
@@ -37,19 +63,30 @@
 
 
     let Library=[];
+     
+
     function addBoooktoLibrary(){
-      const title=prompt("what's the title of your book")
-      const author=prompt("what author of this book")
-      const pages=prompt("what number of pages")
-      const read=prompt("did your read this book Yes/No")
+      const title=document.getElementById('titleinput').value;
+      const author=document.getElementById('authorinput').value;
+      const pages=document.getElementById('numberofpagesinput').value;
+      const read=document.getElementById('readinput').value;
       const objectBook=new book(title,author,pages,read)
       Library.push(objectBook);
+
+
+
+    
+      const affiDialogue=document.getElementById('dialoguee');
+      affiDialogue.showModal();
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault()}); // Prevent form submission
+ 
       
-     
-      
-    function addElement(){
-        const librarDiv=document.getElementById("divLib");
-        librarDiv.innerText="";
+        
+  function addElement(){
+       
+      const librarDiv=document.getElementById("divLib");
+        librarDiv.innerHTML="";
 
 const Title1=document.createElement('div');
 const author1=document.createElement('div');
@@ -65,23 +102,29 @@ Title1.innerText=`${title}`
 
 
 // Ajouter l'élément créé au document
-document.body.appendChild(Title1);
-document.body.appendChild(author1);
-document.body.appendChild(pages1);
-document.body.appendChild(read1);
+librarDiv.appendChild(Title1);
+librarDiv.appendChild(author1);
+librarDiv.appendChild(pages1);
+librarDiv.appendChild(read1);
 
 librarDiv.appendChild(addElement);
 
 
       }
+      document.addEventListener("click",addElement())
       
       
       Library.forEach(addElement);
      
     }
-  
-      
+ 
+ 
     
+    
+  
+   
+     
+     
 
    
   
