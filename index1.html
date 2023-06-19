@@ -9,7 +9,7 @@
 <body>
   
 
-  <button id="addnewbook" onclick="addBoooktoLibrary();">
+  <button id="addnewbook" >
     Add new book
   </button>
   <dialog id="dialoguee">
@@ -47,7 +47,9 @@
 
 
   <script>
-function book (title,author,pages,read){
+
+function Book (title,author,pages,read){
+
 
 this.title=title;
 this.author=author;
@@ -55,57 +57,35 @@ this.pages=pages;
 this.read=read;
 this.info=function infos(){
   console.log(`the ${title} , ${author},number of ages${pages},not ${read}`)
-}
 
-}
+ 
+}}
 
+
+//function qui add l'object livre to book
 let Library=[];
-
-let title ;
-let author ;
-let pages ;
-let read ;
+let title;
+let author;
+let pages;
+let read;
+//adding the books to library
 function addBoooktoLibrary(){
-
-title=document.getElementById('titleinput').value;
+ title=document.getElementById('titleinput').value;
 author=document.getElementById('authorinput').value;
 pages=document.getElementById('numberofpagesinput').value;
 read=document.getElementById('readinput').value;
-const objectBook = new book(title, author, pages, read);
-Library.push(objectBook);
 
+const objectBook = new Book(title, author, pages, read);
+Library.push(objectBook)
 }
-//ajouter le dialogue
-const Modal=document.getElementById('dialoguee');
+  
+//adding the book to libraray and to to the webpage by adding "add"butoon
 const addbookButton=document.getElementById('addnewbook');
+const Modal=document.getElementById('dialoguee');
 addbookButton.addEventListener('click',function(){
 Modal.showModal();
-})
-//ajouter le livre dan la bib et aprés on l'affiche
-const addButtonmodal=document.getElementById('add-button');
-addButtonmodal.addEventListener("click",function(event){
-event.preventDefault();
-addBoooktoLibrary();
-Modal.close();
-
-//creature des nouveaux elements.
-
-const title1=document.createElement('div');
-const author1=document.createElement('div');
-const pages1=document.createElement('div');
-const read1=document.createElement('div');
-
-//ajouter contenu à l'element crée
-title1.innerText=` the title of the book is:${title}`
-author1.innerText=`the author of the book is:${author}`
-pages1.innerText=`number of pages of this book is:${pages}`
-read1.innerText=`did you read this book or not?${read}`
-//afficher les elements dans la page web
-const divLib=document.getElementById('divLib');
-divLib.appendChild(title1);
-divLib.appendChild(author1);
-divLib.appendChild(pages1);
-divLib.appendChild(read1);
+const resetModal=document.getElementById('myForm');
+resetModal.reset();
 
 })
 //add new button to the dialogue "Close" .
@@ -113,7 +93,56 @@ const closeButtonn=document.getElementById('close-button');
 closeButtonn.addEventListener("click",function(event){
   event.preventDefault();
   Modal.close();
+ 
 })
+
+
+
+//ajouter le livre dan la bib et aprés on l'affiche
+const addButtonmodal=document.getElementById('add-button');
+addButtonmodal.addEventListener("click",function(event){
+event.preventDefault();
+addBoooktoLibrary();
+const resetModal=document.getElementById('myForm');
+resetModal.reset();
+Modal.close();
+
+//creature des nouveaux elements.
+
+const title1=document.createElement('div');
+const author1=document.createElement('div');
+const pages1=document.createElement('div');
+const read1=document.createElement("div");
+const removeButton=document.createElement("button");
+
+
+
+
+//ajouter contenu à l'element crée
+title1.innerText=` the title of the book is:${title}`
+author1.innerText=`the author of the book is:${author}`
+pages1.innerText=`number of pages of this book is:${pages}`
+read1.innerText=`did you read this book or not?${read}`
+removeButton.innerText="remove";
+
+
+//afficher les elements dans la page web
+const divLib=document.getElementById('divLib');
+divLib.appendChild(title1);
+divLib.appendChild(author1);
+divLib.appendChild(pages1);
+divLib.appendChild(read1);
+divLib.appendChild(removeButton);
+
+
+})
+
+//je veux faire a remove "button" in each book display 
+
+//second remove the same book from the library
+//remove the book from the webpage
+
+  
 
 </script>
 
