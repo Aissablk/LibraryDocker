@@ -68,18 +68,21 @@ let title;
 let author;
 let pages;
 let read;
+let count;
 //adding the books to library
 function addBoooktoLibrary(){
+  
  title=document.getElementById('titleinput').value;
 author=document.getElementById('authorinput').value;
 pages=document.getElementById('numberofpagesinput').value;
 read=document.getElementById('readinput').value;
 
+
 const objectBook = new Book(title, author, pages, read);
 Library.push(objectBook)
 }
   
-//adding the book to libraray and to to the webpage by adding "add"butoon
+//adding the book to library and to to the webpage by adding "add"butoon
 const addbookButton=document.getElementById('addnewbook');
 const Modal=document.getElementById('dialoguee');
 addbookButton.addEventListener('click',function(){
@@ -136,8 +139,12 @@ divLib.appendChild(removeButton);
 
 
 })
+removeButton.addEventListener("click",function(Library){
 
-//je veux faire a remove "button" in each book display 
+  
+})
+
+
 
 //second remove the same book from the library
 //remove the book from the webpage
