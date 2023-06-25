@@ -61,7 +61,7 @@ this.info=function infos(){
 }}
 
 
-//function qui add l'object livre to book
+
 let Library=[];
 let title;
 let author;
@@ -71,22 +71,22 @@ let id;
 
 //adding the books to library
 function addBoooktoLibrary(){
-  
- title=document.getElementById('titleinput').value;
-author=document.getElementById('authorinput').value;
-pages=document.getElementById('numberofpagesinput').value;
-read=document.getElementById('readinput').value;
+        
+      title=document.getElementById('titleinput').value;
+      author=document.getElementById('authorinput').value;
+      pages=document.getElementById('numberofpagesinput').value;
+      read=document.getElementById('readinput').value;
 
-countBook+=1;
+      countBook+=1;
 
 
 
-const objectBook = new Book(title, author, pages, read,countBook);
-console.log(objectBook);
-Library.push(objectBook)
+      const objectBook = new Book(title, author, pages, read,countBook);
+      console.log(objectBook);
+      Library.push(objectBook)
 }
   
-//adding the book to library and to to the webpage by adding "add"butoon
+//code for "add new book"button in the dialogue
 const addbookButton=document.getElementById('addnewbook');
 const Modal=document.getElementById('dialoguee');
 addbookButton.addEventListener('click',function(){
@@ -95,7 +95,7 @@ const resetModal=document.getElementById('myForm');
 resetModal.reset();
 
 })
-//add new button to the dialogue "Close" .
+//code for close button
 const closeButtonn=document.getElementById('close-button');
 closeButtonn.addEventListener("click",function(event){
   event.preventDefault();
@@ -103,38 +103,33 @@ closeButtonn.addEventListener("click",function(event){
  
 })
 
+//code for add button in the dialgoue
 
 
-//ajouter le livre dan la bib et aprés on l'affiche
 const addButtonmodal=document.getElementById('add-button');
-
 addButtonmodal.addEventListener("click",function(event){
-    event.preventDefault();
-    addBoooktoLibrary();
+  event.preventDefault();
+  addBoooktoLibrary();
   const resetModal=document.getElementById('myForm');
   resetModal.reset();
   Modal.close();
-
-  //creature des nouveaux elements.
-
-
-
-  const bookDiv=document.createElement('div');
-  bookDiv.id="divbook";
-  const title1=document.createElement('div');
-  const author1=document.createElement('div');
-  const pages1=document.createElement('div');
-  const read1=document.createElement("div");
-  const removeButton=document.createElement("button");
-
-removeButton.addEventListener("click",function(){
- 
- const element1=document.getElementById("divbook")
- element1.remove();
-
+  afficheLivre();
 
 })
 
+  //creature des nouveaux elements.
+
+  function afficheLivre(bookDiv,title1,author1,pages1,read1,removeButton){
+
+  
+
+   bookDiv=document.createElement('div');
+  bookDiv.id="divbook";
+  title1=document.createElement('div');
+   author1=document.createElement('div');
+   pages1=document.createElement('div');
+   read1=document.createElement("div");
+  removeButton=document.createElement("button");
   title1.innerText=` the title of the book is:${title}`
   author1.innerText=`the author of the book is:${author}`
   pages1.innerText=`number of pages of this book is:${pages}`
@@ -147,10 +142,17 @@ removeButton.addEventListener("click",function(){
   bookDiv.appendChild(removeButton);
   document.body.appendChild(bookDiv);
 
-})
+removeButton.addEventListener("click",function(){
+ 
+ const element1=document.getElementById("divbook")
+ element1.remove();
+})}
+
+  
 
 
-//////remove button.
+
+
 
 
 
