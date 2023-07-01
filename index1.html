@@ -54,6 +54,7 @@ this.author=author;
 this.pages=pages;
 this.read=read;
 this.id=id;
+
 this.info=function infos(){
   console.log(`the ${title} , ${author},number of ages${pages},not ${read}`)
 
@@ -79,7 +80,7 @@ function addBoooktoLibrary(){
 
       countBook+=1;
 
-
+     
 
       const objectBook = new Book(title, author, pages, read,countBook);
       console.log(objectBook);
@@ -115,7 +116,8 @@ addButtonmodal.addEventListener("click",function(event){
   Modal.close();
   afficheLivre();
   ecrire();
-  afficheProprité();
+  affiche();
+ 
 
 
 })
@@ -127,38 +129,45 @@ addButtonmodal.addEventListener("click",function(event){
         bookDiv=document.createElement('div');
         bookDiv.id="divbook";
         title1=document.createElement('div');
+        title1.id="title1"
         author1=document.createElement('div');
+        author1.id="author1"
         pages1=document.createElement('div');
+        pages1.id="pages1"
         read1=document.createElement("div");
+        read1.id="read1"
         removeButton=document.createElement("button");
-        
-        
+        removeButton.id="remove1"
+        affiche(bookDiv,title1,author1,pages1,read1,removeButton);   
+        ecrire(title1,author1,pages1,read1,removeButton);
         removeButton.addEventListener("click",function(){
+        
+         
+           
             const element1=document.getElementById("divbook")
             element1.remove();
-})}
-function ecrire (title1,author1,pages1,read1,removeButton){
-        title1=document.createElement('div');
-        author1=document.createElement('div');
-        pages1=document.createElement('div');
-        read1=document.createElement("div");
-        removeButton=document.createElement("button");
+})} 
+
+function ecrire(title1,author1,pages1,read1,removeButton){
         
         title1.innerText=` the title of the book is:${title}`
         author1.innerText=`the author of the book is:${author}`
         pages1.innerText=`number of pages of this book is:${pages}`
         read1.innerText=`did you read this book or not?${read}`
         removeButton.innerText="remove";
+
 }
-  function afficheProprité(bookDiv,title1,author1,pages1,read1,removeButton){
+function affiche(bookDiv,title1,author1,pages1,read1,removeButton){
         bookDiv.appendChild(title1)
         bookDiv.appendChild(read1)
         bookDiv.appendChild(author1)
         bookDiv.appendChild(pages1)
         bookDiv.appendChild(removeButton);
         document.body.appendChild(bookDiv);
+}
 
-  }
+
+
 
 
 
