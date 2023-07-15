@@ -56,23 +56,18 @@ addButtonmodal.addEventListener('click', function (event) {
  
 
 });
-const removeButton = document.createElement('button');
-      removeButton.addEventListener('click', function () {
-      const element1 = document.getElementById('removebook');
-      element1.remove();
-  });
- 
+
+
 
 function afficheLivre(title,author,pages,read) {
   const bookDiv = document.createElement('div')
-  bookDiv.id="Mihfada";
+  bookDiv.id="bagage";
   const removeButton = document.createElement('button');
   removeButton.id='removebook';
   const title1 = document.createElement('div');
   const author1 = document.createElement('div');
   const pages1 = document.createElement('div');
   const read1 = document.createElement('div');
-  console.log(read1);
   title1.innerText=` the title of the book is:${title}`
   author1.innerText=`the author of the book is:${author}`
   pages1.innerText=`number of pages of this book is:${pages}`
@@ -85,6 +80,11 @@ function afficheLivre(title,author,pages,read) {
   bookDiv.appendChild(read1);
   bookDiv.appendChild(removeButton);
   document.body.appendChild(bookDiv);
+  removeButton.addEventListener('click', function () {
+    const element1 = document.getElementById('bagage');
+    element1.remove();
+});
+
   
   
   }
