@@ -34,15 +34,16 @@ addbookButton.addEventListener("click", function(event) {
   const resetModal = document.getElementById('myForm');
   resetModal.reset();
 });
-console.log('hello');
+///////////////////// Close button code
 
 const closeButtonn = document.getElementById('close-button');
 closeButtonn.addEventListener('click', function (event) {
   event.preventDefault();
+  const Modal = document.getElementById('dialogue');
   Modal.close();
 });
 
-/////////
+/////////add button code 
 
 const addButtonmodal = document.getElementById('add-button');
 addButtonmodal.addEventListener('click', function (event) {
@@ -57,7 +58,7 @@ addButtonmodal.addEventListener('click', function (event) {
 
 });
 
-
+//////////////////////:affichage le livre dans la page web.
 
 function afficheLivre(title,author,pages,read) {
   const bookDiv = document.createElement('div')
@@ -68,6 +69,7 @@ function afficheLivre(title,author,pages,read) {
   const author1 = document.createElement('div');
   const pages1 = document.createElement('div');
   const read1 = document.createElement('div');
+  const readingButton=document.createElement('div');
   title1.innerText=` the title of the book is:${title}`
   author1.innerText=`the author of the book is:${author}`
   pages1.innerText=`number of pages of this book is:${pages}`
