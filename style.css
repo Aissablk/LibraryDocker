@@ -1,7 +1,15 @@
 .Header{
+    background-image: url("https://bbf.enssib.fr/sites/bbf.enssib.fr/themes/bbf2020/img/home-bg.jpg");
+    display: flex;
     width: 1400px;
     height: 230px;
-    
-    background-color: blue;
+    justify-content: space-between;
 
+    
+   
+
+}
+.button-right{
+    margin-right: 330px;
+    font-size: 20px
 }
