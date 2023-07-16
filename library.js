@@ -69,20 +69,32 @@ function afficheLivre(title,author,pages,read) {
   const author1 = document.createElement('div');
   const pages1 = document.createElement('div');
   const read1 = document.createElement('div');
-  const readingButton=document.createElement('div');
+  const readingButton=document.createElement('button');
+  readingButton.id="readingbutton";
+  readingButton.addEventListener("click",function(event){
+    const changeButton=document.getElementById('readingbutton')
+    changeButton.innerText='Readed';
+  })
+  readingButton.style.display='flex';
+ 
+
+  
+
   title1.innerText=` the title of the book is:${title}`
   author1.innerText=`the author of the book is:${author}`
   pages1.innerText=`number of pages of this book is:${pages}`
   read1.innerText=`did you read this book or not?${read}`
   removeButton.innerText=`Remove`;
+  readingButton.innerText=`Already reading?`
 
   bookDiv.appendChild(title1);
   bookDiv.appendChild(author1);
   bookDiv.appendChild(pages1);
   bookDiv.appendChild(read1);
   bookDiv.appendChild(removeButton);
+  bookDiv.appendChild(readingButton);
   document.body.appendChild(bookDiv);
-  removeButton.addEventListener('click', function () {
+  removeButton.addEventListener('click', function (event) {
     const element1 = document.getElementById('bagage');
     element1.remove();
 });
