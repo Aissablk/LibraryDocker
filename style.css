@@ -27,10 +27,8 @@
     border-radius: 200px;
     border: none;
    color: white;
-
-   
    margin-left: 500px;
-   
+   cursor: pointer;
    
 }
 .button:hover{
@@ -51,11 +49,16 @@
     justify-content: space-between;
 }
 .Dialogue{
+    background-color:rgb(245, 236, 236);
+    border-color: white;
 
 }
 .form{
     border-color: rgb(170, 194, 170);
     border-bottom: 20px;
+    background-color:rgb(245, 236, 236);
+    
+
 
 }
 .inputs{
@@ -63,9 +66,41 @@
     border-style: double;
     border-radius: 25px;
     padding-top: 8px;
+    
 }
 .titles{
-
+    color: black;
     font-family: Impact;
     font-size: 20px;
+}
+.Resume{
+    padding: 40px;
+    border-radius: 50px;
+    border: none;
+    border-color: (181, 209, 181);
+    font-family: Impact;
+    font-size: 20px;
+   
+}
+.resumetext{
+    font-family: Impact;
+    font-size: 20px;
+}
+.two-button{
+    padding: 10px;
+    border-radius: 20px;
+    border-width: 0px;
+    background-color: white;
+    margin-top: 10px;
+    
+}
+.two-button:hover{
+    background-color: aqua;
+    color: white;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:20px;
+    padding-right:20px;
+
 }
