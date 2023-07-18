@@ -4,30 +4,68 @@
     width: 1400px;
     height: 230px;
     justify-content: space-between;
+   
 
 }
 .button-right{
-    margin-right: 330px;
+    
     font-size: 20px;
+    align-items: center;
+    width: 20px;
+   
   
     
 }
 .button{
-    padding: 15px;
+    padding-left: 40px;
+    padding-right: 41px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     margin-top: 70px;
     background-color: rgb(147, 221, 147);
     font-size: 16px;
-    border-radius: 20px;
+    border-radius: 200px;
     border: none;
    color: white;
-   font-family:Courier;
-   margin-right:300px;
+
+   
+   margin-left: 500px;
+   
    
 }
 .button:hover{
     background-color:black;
     
 }
-.img-logo{
-    margin-left: 200px;
+.image1{
+    height: 250px;
+}
+.image2{
+    height: 250px;
+    margin-left: 550px;
+   
+}
+
+.allicons{
+    display: flex;
+    justify-content: space-between;
+}
+.Dialogue{
+
+}
+.form{
+    border-color: rgb(170, 194, 170);
+    border-bottom: 20px;
+
+}
+.inputs{
+    border-color: rgb(181, 209, 181);
+    border-style: double;
+    border-radius: 25px;
+    padding-top: 8px;
+}
+.titles{
+
+    font-family: Impact;
+    font-size: 20px;
 }
