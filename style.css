@@ -5,9 +5,6 @@
     height: 230px;
     justify-content: space-between;
 
-    
-   
-
 }
 .button-right{
     margin-right: 330px;
@@ -22,6 +19,15 @@
     font-size: 16px;
     border-radius: 20px;
     border: none;
+   color: white;
+   font-family:Courier;
+   margin-right:300px;
+   
+}
+.button:hover{
+    background-color:black;
     
-
+}
+.img-logo{
+    margin-left: 200px;
 }
