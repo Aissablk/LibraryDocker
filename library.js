@@ -61,45 +61,42 @@ addButtonmodal.addEventListener('click', function (event) {
 //////////////////////:affichage le livre dans la page web.
 
 function afficheLivre(title,author,pages,read) {
-  const bookDiv = document.createElement('div')
-  bookDiv.id="bagage";
-  const removeButton = document.createElement('button');
-  removeButton.id='removebook';
-  const title1 = document.createElement('div');
 
-  const author1 = document.createElement('div');
-  const pages1 = document.createElement('div');
-  const read1 = document.createElement('div');
+
+   ///////////:add the first button "Reading button"
   const readingButton=document.createElement('button');
+  readingButton.innerText=`Already reading?`
   readingButton.id="readingbutton";
   readingButton.addEventListener("click",function(event){
-    const changeButton=document.getElementById('readingbutton')
-    changeButton.innerText='Readed';
+      var changeButton=document.getElementById('readingbutton')
+      if(changeButton.innerText==='Already reading?'){
+        changeButton.innerText='redead';
+      }
+      else{
+        changeButton.innerText='Already reading?';
+      }
   })
-  readingButton.style.display='flex';
-  
- 
-
-  
-
-  title1.innerText=` the title:${title}`
-  author1.innerText=`the author :${author}`
-  pages1.innerText=`number of pages is:${pages}`
-  read1.innerText=`the resume:${read}`
+  /////////add the second button "Remove button"
+  const removeButton = document.createElement('button');
   removeButton.innerText=`Remove`;
-  readingButton.innerText=`Already reading?`
-
-  bookDiv.appendChild(title1);
-  bookDiv.appendChild(author1);
-  bookDiv.appendChild(pages1);
-  bookDiv.appendChild(read1);
-  bookDiv.appendChild(removeButton);
-  bookDiv.appendChild(readingButton);
-  document.body.appendChild(bookDiv);
+  removeButton.id='removebook';
   removeButton.addEventListener('click', function (event) {
     const element1 = document.getElementById('bagage');
     element1.remove();
 });
+
+const bookDiv = document.createElement('div')
+bookDiv.id="bagage";
+const title1 = document.createElement('div');
+const author1 = document.createElement('div');
+const pages1 = document.createElement('div');
+const read1 = document.createElement('div');
+
+
+title1.innerText=` the title:${title}`
+author1.innerText=`the author :${author}`
+pages1.innerText=`number of pages is:${pages}`
+read1.innerText=`the resume:${read}`
 /////////adding a css class to buttons
 removeButton.classList.add("two-button");
 readingButton.classList.add("two-button");
@@ -108,8 +105,14 @@ title1.classList.add("affichage");
 author1.classList.add("affichage");
 pages1.classList.add("affichage");
 read1.classList.add("affichage");
-  
-  
+
+bookDiv.appendChild(title1);
+bookDiv.appendChild(author1);
+bookDiv.appendChild(pages1);
+bookDiv.appendChild(read1);
+bookDiv.appendChild(removeButton);
+bookDiv.appendChild(readingButton);
+document.body.appendChild(bookDiv);
   }
  
 
