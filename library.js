@@ -66,6 +66,7 @@ function afficheLivre(title,author,pages,read) {
   const removeButton = document.createElement('button');
   removeButton.id='removebook';
   const title1 = document.createElement('div');
+
   const author1 = document.createElement('div');
   const pages1 = document.createElement('div');
   const read1 = document.createElement('div');
@@ -76,6 +77,7 @@ function afficheLivre(title,author,pages,read) {
     changeButton.innerText='Readed';
   })
   readingButton.style.display='flex';
+  
  
 
   
@@ -98,6 +100,11 @@ function afficheLivre(title,author,pages,read) {
     const element1 = document.getElementById('bagage');
     element1.remove();
 });
+/////////adding a css class to buttons
+removeButton.classList.add("two-button");
+readingButton.classList.add("two-button");
+bookDiv.classList.add("bookDivedit")
+title1.classList.add("affichage");
 
   
   
