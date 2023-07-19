@@ -82,10 +82,10 @@ function afficheLivre(title,author,pages,read) {
 
   
 
-  title1.innerText=` the title of the book is:${title}`
-  author1.innerText=`the author of the book is:${author}`
-  pages1.innerText=`number of pages of this book is:${pages}`
-  read1.innerText=`did you read this book or not?${read}`
+  title1.innerText=` the title:${title}`
+  author1.innerText=`the author :${author}`
+  pages1.innerText=`number of pages is:${pages}`
+  read1.innerText=`the resume:${read}`
   removeButton.innerText=`Remove`;
   readingButton.innerText=`Already reading?`
 
@@ -105,7 +105,9 @@ removeButton.classList.add("two-button");
 readingButton.classList.add("two-button");
 bookDiv.classList.add("bookDivedit")
 title1.classList.add("affichage");
-
+author1.classList.add("affichage");
+pages1.classList.add("affichage");
+read1.classList.add("affichage");
   
   
   }
