@@ -105,8 +105,9 @@
     font-family:'Segoe UI';
     font-weight: 30px;
     font-size: 20px;
-    width: 400px;
-    height: 45px;
+   
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 .bookDivedit{
     background-color: rgb(245, 236, 236);

@@ -1,5 +1,5 @@
 let countBook = -1;
-
+////////////////constucteur function "book"
 function Book(title, author, pages, read, id) {
   this.title = title;
   this.author = author;
@@ -27,6 +27,7 @@ function addBoooktoLibrary() {
   console.log(objectBook);
   Library.push(objectBook);
 }
+////////////:the "add new book" button
 const addbookButton = document.getElementById('addnewbook');
 addbookButton.addEventListener("click", function(event) {
   const Modal = document.getElementById('dialogue');
@@ -58,8 +59,7 @@ addButtonmodal.addEventListener('click', function (event) {
 
 });
 
-//////////////////////:affichage le livre dans la page web.
-
+//////////////////////:"display the book on the web page."
 function afficheLivre(title,author,pages,read) {
 
 
