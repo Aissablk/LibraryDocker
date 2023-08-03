@@ -37,6 +37,15 @@ function updateLocalStorage() {
   localStorage.setItem("Library", JSON.stringify(Library));
 }
 
+function loadLocalStorage(){
+  const libraryData=localStorage.getItem("Library")
+  if(libraryData){
+    Library=JSON.parse(libraryData);
+    for(const book of Library)
+      afficheLivre(book.title,book.author,book.pages,book.read);
+
+  }
+}
 
 
 ////////////:the "add new book" button
