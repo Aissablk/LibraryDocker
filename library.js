@@ -28,7 +28,7 @@ function addBoooktoLibrary() {
   Library.push(objectBook);
 
 
-
+updateLocalStorage();
  
 }
 
