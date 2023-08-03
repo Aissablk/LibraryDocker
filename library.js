@@ -31,7 +31,7 @@ function addBoooktoLibrary() {
 updateLocalStorage();
  
 }
-
+////////////loading data from localstorage
 function updateLocalStorage() {
   // Store the Library  in local storage
   localStorage.setItem("Library", JSON.stringify(Library));
@@ -46,7 +46,8 @@ function loadLocalStorage(){
 
   }
 }
-
+/////////Calling the function to load data when the page reloads.
+document.addEventListener("DOMContentLoaded", loadLibraryFromLocalStorage);
 
 ////////////:the "add new book" button
 const addbookButton = document.getElementById('addnewbook');
