@@ -20,13 +20,25 @@ function addBoooktoLibrary() {
   let pages = document.getElementById('numberofpagesinput').value;
   let read = document.getElementById('readinput').value;
   afficheLivre(title,author,pages,read)
- 
+
   countBook += 1;
 
   const objectBook = new Book(title, author, pages, read, countBook);
   console.log(objectBook);
   Library.push(objectBook);
+
+
+
+ 
 }
+
+function updateLocalStorage() {
+  // Store the Library  in local storage
+  localStorage.setItem("Library", JSON.stringify(Library));
+}
+
+
+
 ////////////:the "add new book" button
 const addbookButton = document.getElementById('addnewbook');
 addbookButton.addEventListener("click", function(event) {
@@ -54,6 +66,7 @@ addButtonmodal.addEventListener('click', function (event) {
   resetModal.reset();
   const Modal = document.getElementById('dialogue');
   Modal.close();
+ 
  
  
 
@@ -85,6 +98,8 @@ function afficheLivre(title,author,pages,read) {
     element1.remove();
 });
 
+
+
 const bookDiv = document.createElement('div')
 bookDiv.id="bagage";
 const title1 = document.createElement('div');
@@ -100,6 +115,7 @@ read1.innerText=`the resume:${read}`
 /////////adding a css class to buttons
 removeButton.classList.add("two-button");
 readingButton.classList.add("two-button");
+
 bookDiv.classList.add("bookDivedit")
 title1.classList.add("affichage");
 author1.classList.add("affichage");
@@ -112,11 +128,12 @@ bookDiv.appendChild(pages1);
 bookDiv.appendChild(read1);
 bookDiv.appendChild(removeButton);
 bookDiv.appendChild(readingButton);
+
 document.body.appendChild(bookDiv);
+
   }
+
  
-
-
 
 //////////////////
 
